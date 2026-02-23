@@ -17,10 +17,10 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="border-b border-gray-100">
+    <header className="border-b border-[var(--border)]">
       <nav className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-lg font-semibold text-gray-900 hover:text-gray-600 transition-colors">
-          Dante Cuales Jr
+        <Link href="/" className="text-lg font-bold text-[var(--accent)] hover:text-[var(--accent-secondary)] transition-colors">
+          ~/dante
         </Link>
 
         {/* Desktop nav */}
@@ -31,11 +31,11 @@ export default function Header() {
                 href={href}
                 className={`transition-colors ${
                   pathname === href
-                    ? "text-gray-900 font-medium"
-                    : "text-gray-500 hover:text-gray-900"
+                    ? "text-[var(--accent)] font-medium"
+                    : "text-[var(--muted)] hover:text-[var(--accent-secondary)]"
                 }`}
               >
-                {label}
+                {pathname === href ? `> ${label}` : label}
               </Link>
             </li>
           ))}
@@ -43,25 +43,17 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="sm:hidden text-gray-500 hover:text-gray-900 transition-colors"
+          className="sm:hidden text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          {menuOpen ? (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
+          {menuOpen ? "[x]" : "[=]"}
         </button>
       </nav>
 
       {/* Mobile nav */}
       {menuOpen && (
-        <div className="sm:hidden border-t border-gray-100 px-6 py-4">
+        <div className="sm:hidden border-t border-[var(--border)] px-6 py-4">
           <ul className="space-y-3 text-sm">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
@@ -70,11 +62,11 @@ export default function Header() {
                   onClick={() => setMenuOpen(false)}
                   className={`block transition-colors ${
                     pathname === href
-                      ? "text-gray-900 font-medium"
-                      : "text-gray-500 hover:text-gray-900"
+                      ? "text-[var(--accent)] font-medium"
+                      : "text-[var(--muted)] hover:text-[var(--accent-secondary)]"
                   }`}
                 >
-                  {label}
+                  {pathname === href ? `> ${label}` : `  ${label}`}
                 </Link>
               </li>
             ))}

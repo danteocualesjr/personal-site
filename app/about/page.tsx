@@ -7,11 +7,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div>
-      <h1 className="text-3xl font-bold tracking-tight">About Me</h1>
+      <h1 className="text-3xl font-bold tracking-tight text-[var(--accent)]">// about</h1>
 
-      <div className="mt-8 space-y-6 text-gray-600 leading-relaxed">
+      <div className="mt-8 border border-dashed border-[var(--border)] p-6 space-y-6 text-[var(--foreground)] leading-relaxed">
         <p>
-          Hey! I&apos;m Dante Cuales Jr. Welcome to my little corner of the internet.
+          <span className="text-[var(--accent-secondary)]">$</span> Hey! I&apos;m Dante Cuales Jr. Welcome to my little corner of the internet.
         </p>
 
         <p>
@@ -29,30 +29,30 @@ export default function AboutPage() {
           I&apos;m working on. Feel free to look around!
         </p>
 
-        <div className="pt-4">
-          <h2 className="text-lg font-semibold text-gray-900">Get in touch</h2>
+        <div className="pt-4 border-t border-[var(--border)]">
+          <h2 className="text-lg font-semibold text-[var(--accent)]">// connect</h2>
           <div className="mt-3 flex gap-4 text-sm">
             <a
               href="https://github.com/danteocualesjr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-900 transition-colors"
+              className="text-[var(--accent-secondary)] hover:text-[var(--accent)] transition-colors"
             >
-              GitHub
+              [github]
             </a>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-900 transition-colors"
+              className="text-[var(--accent-secondary)] hover:text-[var(--accent)] transition-colors"
             >
-              Twitter
+              [twitter]
             </a>
             <a
               href="mailto:hello@example.com"
-              className="text-gray-500 hover:text-gray-900 transition-colors"
+              className="text-[var(--accent-secondary)] hover:text-[var(--accent)] transition-colors"
             >
-              Email
+              [email]
             </a>
           </div>
         </div>

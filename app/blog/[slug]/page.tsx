@@ -31,22 +31,22 @@ export default async function BlogPostPage({ params }: PageProps) {
     <article>
       <Link
         href="/blog"
-        className="text-sm text-gray-400 hover:text-gray-900 transition-colors"
+        className="text-sm text-[var(--muted)] hover:text-[var(--accent-secondary)] transition-colors"
       >
-        &larr; Back to blog
+        &larr; cd ../blog
       </Link>
 
       <header className="mt-8">
-        <h1 className="text-3xl font-bold tracking-tight">{post.title}</h1>
-        <div className="mt-2 flex items-center gap-3 text-sm text-gray-400">
+        <h1 className="text-3xl font-bold tracking-tight text-[var(--accent)]">{post.title}</h1>
+        <div className="mt-2 flex items-center gap-3 text-xs text-[var(--muted)]">
           <time>{post.date}</time>
-          <span>&middot;</span>
+          <span>|</span>
           <span>{readingTime}</span>
         </div>
       </header>
 
       <div
-        className="mt-10 prose prose-gray max-w-none"
+        className="mt-10 prose max-w-none"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
       />
     </article>

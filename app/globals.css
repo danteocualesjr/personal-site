@@ -2,8 +2,12 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
+  --background: #1a1a2e;
+  --foreground: #e0d9c8;
+  --accent: #e2b714;
+  --accent-secondary: #4ecca3;
+  --muted: #7a7568;
+  --border: #3a3a5c;
 }
 
 @theme inline {
@@ -14,4 +18,47 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+/* Retro scanline effect on the body */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Custom prose styling for retro */
+.prose {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--accent);
+  --tw-prose-links: var(--accent-secondary);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-code: var(--accent-secondary);
+  --tw-prose-quotes: var(--muted);
+}
+
+.prose a {
+  text-decoration-style: dashed;
+}
+
+.prose code {
+  background: rgba(78, 204, 163, 0.1);
+  padding: 2px 6px;
+  border-radius: 0;
+  border: 1px dashed var(--accent-secondary);
 }

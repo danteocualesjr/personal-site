@@ -11,10 +11,10 @@ export default function BlogPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold tracking-tight">Blog</h1>
-      <p className="mt-2 text-gray-500">Thoughts, ideas, and things I&apos;m learning.</p>
+      <h1 className="text-3xl font-bold tracking-tight text-[var(--accent)]">// blog</h1>
+      <p className="mt-2 text-[var(--muted)]">Thoughts, ideas, and things I&apos;m learning.</p>
 
-      <div className="mt-8 divide-y divide-gray-100">
+      <div className="mt-8 border border-dashed border-[var(--border)] p-4 divide-y divide-[var(--border)]">
         {posts.length > 0 ? (
           posts.map((post) => (
             <BlogCard
@@ -26,7 +26,7 @@ export default function BlogPage() {
             />
           ))
         ) : (
-          <p className="text-gray-400 text-sm py-4">No posts yet. Check back soon!</p>
+          <p className="text-[var(--muted)] text-sm py-2">No posts yet. Check back soon!</p>
         )}
       </div>
     </div>
