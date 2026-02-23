@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     template: "%s | Dante Cuales Jr",
   },
   description: "Personal website of Dante Cuales Jr — thoughts, bookshelf, projects, and more.",
+  openGraph: {
+    title: "Dante Cuales Jr",
+    description: "Thoughts, bookshelf, projects, and more.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Dante Cuales Jr",
+    description: "Thoughts, bookshelf, projects, and more.",
+  },
 };
 
 export default function RootLayout({
